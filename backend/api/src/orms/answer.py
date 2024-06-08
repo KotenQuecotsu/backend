@@ -7,6 +7,6 @@ class AnswerORM(BaseModel):
     answer:str
     student_id:int
 
-class CreateAnswerORM(BaseModel):
+class CreateAnswer(BaseModel):
     answer:str
     student_id:int

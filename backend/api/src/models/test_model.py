@@ -6,7 +6,7 @@ from sqlalchemy.dialects.postgresql import ARRAY
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from src.db.postgres import Base
-from src.orms.orms import *
+from src.orms.orms import TestsORM
 
 
 class Tests(Base):

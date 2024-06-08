@@ -10,7 +10,7 @@ class Answers(Base):
 
     id: Mapped[int] = mapped_column(Integer,primary_key=True)
     answer: Mapped[str] = mapped_column(String)
-    student_id: Mapped[int] = mapped_column(ForeignKey("tests.id"))
+    student_id: Mapped[int] = mapped_column(ForeignKey("users.id"))
 
     def to_read_model(self):
         return AnswerORM(
