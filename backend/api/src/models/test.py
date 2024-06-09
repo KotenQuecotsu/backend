@@ -2,7 +2,7 @@ from __future__ import annotations
 from sqlalchemy import Integer, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column
 from src.db.postgres import Base
-from src.orms.orms import TestORM
+from src.orms.test import TestORM
 
 
 

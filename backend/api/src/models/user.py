@@ -2,6 +2,7 @@ from __future__ import annotations
 from sqlalchemy import Integer, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column
 from src.db.postgres import UserORM
+from src.orms.user import UserORM
 
 class User(Base):
     __tablename__ = "users"
@@ -13,7 +14,7 @@ class User(Base):
     hashed_password: Mapped[str] = mapped_column(String())
     
     def to_read_model(self):
-        return TestORM(
+        return UserORM(
             id=self.id,
             email=self.email,
             name=self.name,
