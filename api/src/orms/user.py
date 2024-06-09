@@ -7,12 +7,12 @@ class UserORM(BaseModel):
     email: str
     first_name: str
     last_name: str
-    role: Role
+    role: str
 
 
-class CreateUser(CreateUpdateDictModel):
+class CreateUser(BaseModel):
     email: str
     first_name: str
     last_name: str
-    role: Role
+    role: str
     password: str

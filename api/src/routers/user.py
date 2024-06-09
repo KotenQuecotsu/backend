@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends
 from src.orms.user import UserORM, CreateUser
-from src.util.user_config import fastapi_users, auth_backend
+from src.utils.users import fastapi_users, auth_backend
 
 router = APIRouter(
     prefix="/auth",
@@ -8,7 +8,7 @@ router = APIRouter(
 )
 
 router.include_router(
-    fastapi_users.get_register_router(UserRead, UserCreate),
+    fastapi_users.get_register_router(UserORM, CreateUser),
 )
 
 router.include_router(

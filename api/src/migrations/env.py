@@ -6,11 +6,19 @@ from sqlalchemy import pool
 from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import async_engine_from_config
 
-from conf import SQLALCHEMY_ASYNC_DATABASE_URL
+DB_URL = "postgresql+asyncpg://postgres:h6lld6m6n@localhost:5432/postgres"
+
+from src.models.user import * 
+from src.models.question import * 
+from src.models.test import * 
+from src.models.answer import *
+
 from src.db.postgres import Base
 
+
+
 config = context.config
-config.set_main_option("sqlalchemy.url", SQLALCHEMY_ASYNC_DATABASE_URL)
+config.set_main_option("sqlalchemy.url", DB_URL)
 
 
 if config.config_file_name is not None:
